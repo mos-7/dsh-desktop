@@ -1,0 +1,7 @@
+# 构建产物与依赖, 不上传
+node_modules/
+dist/
+mirror/
+*.log
+*.7z
+__pycache__/
