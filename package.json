@@ -1,0 +1,35 @@
+{
+  "name": "dsh-desktop",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness 桌面客户端",
+  "author": "local",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "build:nsis": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.local.dsh-desktop",
+    "productName": "DeepSeek 聊天",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "icon.png", "icon.ico"],
+    "win": {
+      "icon": "icon.ico",
+      "target": ["portable", "nsis"],
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "DeepSeek聊天-${version}-portable.exe"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "DeepSeek聊天-Setup-${version}.exe"
+    }
+  }
+}
